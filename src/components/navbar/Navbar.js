@@ -43,7 +43,7 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              <Link> SendIt</Link>
+              <Link to="/"> SendIt</Link>
             </li>
           </ul>
           {!authToken ? (

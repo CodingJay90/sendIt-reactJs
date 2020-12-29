@@ -55,16 +55,6 @@ button:hover {
   filter: brightness(130%);
 }
 
-.password-error-field,
-.email-error-field {
-  color: #e46a6a;
-  font-family: arial;
-  text-align: center;
-}
-
-.hide {
-  display: none;
-}
 /* =============== */
 .layer {
   width: 65%;

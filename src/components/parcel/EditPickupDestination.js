@@ -38,7 +38,7 @@ const EditPickupDestination = (props) => {
       });
   };
   return (
-    <>
+    <div className="Create">
       <div class="form">
         <h1>Edit pickup Destination</h1>
         <form onSubmit={handleSubmit}>
@@ -53,7 +53,7 @@ const EditPickupDestination = (props) => {
           <button>Update</button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -51,7 +51,7 @@ const CreateParcel = () => {
       });
   };
   return (
-    <>
+    <div className="Create">
       <div class="form">
         <h1>Create Order</h1>
         <form onSubmit={handleSubmit}>
@@ -86,7 +86,7 @@ const CreateParcel = () => {
           <button>Submit</button>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 
