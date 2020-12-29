@@ -5,9 +5,9 @@ import "./Home.css";
 const home = () => {
   return (
     <div>
-      <div class="conatiner">
-        <div class="jumbotron">
-          <div class="landing-inner">
+      <div className="conatiner">
+        <div className="jumbotron">
+          <div className="landing-inner">
             <h1>SendIt .</h1>
             <h5>
               The best delivery website on the internet, with over 5k users and
