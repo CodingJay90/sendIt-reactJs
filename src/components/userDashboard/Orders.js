@@ -1,7 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Orders = ({ item }) => {
+  toast.configure();
+
+  const cancelParcel = (id) => {
+    fetch(`/parcels/${id}/cancel`, {
+      method: "PUT",
+      body: JSON.stringify({ user_id: localStorage.getItem("currentUserId") }),
+      headers: {
+        "Content-type": "application/json",
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.success) {
+          toast.success(data.msg);
+          setTimeout(() => window.location.reload(), 2501);
+        }
+      })
+      .catch((err) => toast.error(err));
+  };
   return (
     <div>
       <div class="order-item">
@@ -27,7 +50,11 @@ const Orders = ({ item }) => {
         <div>
           <Link href="">Edit</Link>
           {item.status === "cancelled" ? null : (
-            <button class="btn" id="cancel-btn">
+            <button
+              class="btn"
+              id="cancel-btn"
+              onClick={() => cancelParcel(item.id)}
+            >
               Cancel order
             </button>
           )}
