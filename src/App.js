@@ -4,6 +4,7 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
+import CreateParcel from "./components/parcel/CreateParcel";
 import UserDashboard from "./components/userDashboard/UserDashboard";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <Route path="/userDashboard" component={UserDashboard} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={SignUp} />
+          <Route path="/createParcel" component={CreateParcel} />
         </div>
       </Switch>
     </Router>

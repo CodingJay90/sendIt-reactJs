@@ -27,7 +27,7 @@ const UserDashboard = () => {
         .then((res) => res.json())
         .then((data) => {
           setItem(data);
-          console.log(item);
+          console.log(data);
         });
     }
   }, [history]);
@@ -37,7 +37,9 @@ const UserDashboard = () => {
       <div className="container">
         <div className="hero">
           <h1>Dashboard</h1>
-          <Link className="btn">Create Order</Link>
+          <Link to="/createParcel" className="btn">
+            Create Order
+          </Link>
         </div>
 
         <div className="details">
@@ -46,7 +48,7 @@ const UserDashboard = () => {
         <h2>Orders</h2>
         <div className="orders-layer">
           <div className="orders">
-            {item > 0
+            {item.length > 0
               ? item.map((i) => {
                   return <Orders item={i} />;
                 })
