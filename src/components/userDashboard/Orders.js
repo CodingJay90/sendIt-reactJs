@@ -26,9 +26,11 @@ const Orders = ({ item }) => {
         </p>
         <div>
           <Link href="">Edit</Link>
-          <button class="btn" id="cancel-btn">
-            Cancel order
-          </button>
+          {item.status === "cancelled" ? null : (
+            <button class="btn" id="cancel-btn">
+              Cancel order
+            </button>
+          )}
         </div>
       </div>
     </div>
