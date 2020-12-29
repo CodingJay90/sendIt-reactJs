@@ -27,7 +27,8 @@ nav li {
   padding: 1.4rem;
 }
 
-nav li a:hover {
+nav li a:hover,
+li:hover {
   /* border: 1px solid grey; */
   cursor: pointer;
   transition: ease 400ms;

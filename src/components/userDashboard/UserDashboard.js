@@ -4,12 +4,11 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Orders from "./Orders";
 import "./UserDashBoard.css";
-toast.configure();
-
-const token = localStorage.getItem("token");
-const userId = localStorage.getItem("currentUserId");
 
 const UserDashboard = () => {
+  toast.configure();
+  const token = localStorage.getItem("token");
+  const userId = localStorage.getItem("currentUserId");
   const [item, setItem] = useState([]);
   const history = useHistory();
 

@@ -32,6 +32,7 @@ const Login = () => {
           localStorage.setItem("currentUserId", data.userId);
           localStorage.setItem("token", data.token);
           history.push("/userDashboard");
+          window.location.reload();
         } else {
           toast.error(data.message ? data.message : data);
         }
