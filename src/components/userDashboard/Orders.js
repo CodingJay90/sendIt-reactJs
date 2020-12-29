@@ -48,7 +48,7 @@ const Orders = ({ item }) => {
           Parcel Id: <span id="id">{item.id}</span>
         </p>
         <div>
-          <Link href="">Edit</Link>
+          <Link to={{ pathname: "/editDestination", state: item }}>Edit</Link>
           {item.status === "cancelled" ? null : (
             <button
               class="btn"
