@@ -19,7 +19,7 @@ const UserDashboard = () => {
       );
       history.push("/login");
     } else {
-      fetch(`/parcels/${userId}`, {
+      fetch(`https://sendit-parcel.herokuapp.com/parcels/${userId}`, {
         headers: {
           "x-access-token": token,
         },

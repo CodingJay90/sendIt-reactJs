@@ -14,17 +14,20 @@ const EditPickupDestination = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/parcels/${parcel_id}/destination`, {
-      method: "PUT",
-      body: JSON.stringify({
-        destination: value,
-        user_id: localStorage.getItem("currentUserId"),
-      }),
-      headers: {
-        "Content-type": "Application/json",
-        "x-access-token": localStorage.getItem("token"),
-      },
-    })
+    fetch(
+      `https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/destination`,
+      {
+        method: "PUT",
+        body: JSON.stringify({
+          destination: value,
+          user_id: localStorage.getItem("currentUserId"),
+        }),
+        headers: {
+          "Content-type": "Application/json",
+          "x-access-token": localStorage.getItem("token"),
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

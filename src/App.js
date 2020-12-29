@@ -3,8 +3,8 @@ import Login from "./components/auth/Login";
 import SignUp from "./components/auth/SignUp";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
-import CreateParcel from "./components/parcel/CreateParcel";
-import EditPickupDestination from "./components/parcel/EditPickupDestination";
+import CreateParcel from "./componentshttps://sendit-parcel.herokuapp.com/parcel/CreateParcel";
+import EditPickupDestination from "./componentshttps://sendit-parcel.herokuapp.com/parcel/EditPickupDestination";
 import UserDashboard from "./components/userDashboard/UserDashboard";
 
 function App() {

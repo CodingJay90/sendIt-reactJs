@@ -11,7 +11,7 @@ const Navbar = () => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch("/auth/user", {
+    fetch("https://sendit-parcel.herokuapp.com/auth/user", {
       method: "GET",
       headers: {
         "Content-type": "Apllication/json",

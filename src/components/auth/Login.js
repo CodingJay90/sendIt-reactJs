@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/auth/login", {
+    fetch("https://sendit-parcel.herokuapp.com/auth/login", {
       method: "POST",
       body: JSON.stringify({ email: values.email, password: values.password }),
       headers: {

@@ -20,7 +20,7 @@ const CreateParcel = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("/parcels", {
+    fetch("https://sendit-parcel.herokuapp.com/parcels", {
       method: "POST",
       body: JSON.stringify({
         user_id,

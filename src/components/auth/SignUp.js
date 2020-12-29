@@ -21,7 +21,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("/auth/register", {
+    fetch("https://sendit-parcel.herokuapp.com/auth/register", {
       method: "POST",
       body: JSON.stringify({
         first_name: values.first_name,

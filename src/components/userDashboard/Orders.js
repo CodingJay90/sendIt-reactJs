@@ -7,7 +7,7 @@ const Orders = ({ item }) => {
   toast.configure();
 
   const cancelParcel = (id) => {
-    fetch(`/parcels/${id}/cancel`, {
+    fetch(`https://sendit-parcel.herokuapp.com/parcels/${id}/cancel`, {
       method: "PUT",
       body: JSON.stringify({ user_id: localStorage.getItem("currentUserId") }),
       headers: {
