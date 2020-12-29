@@ -46,9 +46,11 @@ const UserDashboard = () => {
         <h2>Orders</h2>
         <div className="orders-layer">
           <div className="orders">
-            {item.map((i) => {
-              return <Orders item={i} />;
-            })}
+            {item > 0
+              ? item.map((i) => {
+                  return <Orders item={i} />;
+                })
+              : " You have no delivery order yet"}
           </div>
         </div>
       </div>
