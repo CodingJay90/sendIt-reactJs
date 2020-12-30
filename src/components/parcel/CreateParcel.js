@@ -42,7 +42,7 @@ const CreateParcel = () => {
           setTimeout(() => history.push("/userDashBoard"), 3001);
         } else {
           data.errors.map((err) => {
-            toast.error(err.msg);
+            return toast.error(err.msg);
           });
         }
       })

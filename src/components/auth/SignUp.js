@@ -44,7 +44,7 @@ const SignUp = () => {
           window.location.reload();
         } else {
           data.errors.map((err) => {
-            toast.error(err.msg);
+            return toast.error(err.msg);
           });
         }
       })

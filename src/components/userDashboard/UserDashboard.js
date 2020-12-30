@@ -30,7 +30,7 @@ const UserDashboard = () => {
           console.log(data);
         });
     }
-  }, [history]);
+  }, [history, token, userId]);
   console.log(item);
   return (
     <>
@@ -50,7 +50,7 @@ const UserDashboard = () => {
           <div className="orders">
             {item.length > 0
               ? item.map((i) => {
-                  return <Orders item={i} />;
+                  return <Orders item={i} key={i.id} />;
                 })
               : " You have no delivery order yet"}
           </div>

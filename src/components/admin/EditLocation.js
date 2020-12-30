@@ -4,30 +4,27 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./CreateParcel.css";
 
-const EditPickupDestination = (props) => {
-  const destination = props.history.location.state.destination;
+const EditLocation = (props) => {
+  const location = props.history.location.state.location;
   const parcel_id = props.history.location.state.id;
   const [value, setValue] = useState("");
-  useEffect(() => setValue(destination), [destination]);
+  useEffect(() => setValue(location), [location]);
   toast.configure();
   const history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(
-      `https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/destination`,
-      {
-        method: "PUT",
-        body: JSON.stringify({
-          destination: value,
-          user_id: localStorage.getItem("currentUserId"),
-        }),
-        headers: {
-          "Content-type": "Application/json",
-          "x-access-token": localStorage.getItem("token"),
-        },
-      }
-    )
+    fetch(`https://sendit-parcel.herokuapp.com/parcels/${parcel_id}/location`, {
+      method: "PUT",
+      body: JSON.stringify({
+        location: value,
+        user_id: localStorage.getItem("currentUserId"),
+      }),
+      headers: {
+        "Content-type": "Application/json",
+        "x-access-token": localStorage.getItem("token"),
+      },
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -45,11 +42,11 @@ const EditPickupDestination = (props) => {
       <div class="form">
         <h1>Edit pickup Destination</h1>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="destination">Pickup Destination</label>
+          <label htmlFor="location">User Location</label>
           <input
             type="text"
-            name="destination"
-            placeholder="Update pick up destination"
+            name="location"
+            placeholder="Update user location"
             onChange={(e) => setValue(e.target.value)}
             value={value}
           />
@@ -60,4 +57,4 @@ const EditPickupDestination = (props) => {
   );
 };
 
-export default EditPickupDestination;
+export default EditLocation;
