@@ -30,6 +30,7 @@ const Navbar = () => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("currentUserId");
+    localStorage.removeItem("role");
     toast.info(`Logging You out ${user}`);
     setTimeout(() => {
       history.push("/");

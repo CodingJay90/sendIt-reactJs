@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./CreateParcel.css";
+import "../parcel/CreateParcel.css";
 
 const EditLocation = (props) => {
   const location = props.history.location.state.location;
@@ -40,7 +40,7 @@ const EditLocation = (props) => {
   return (
     <div className="Create">
       <div class="form">
-        <h1>Edit pickup Destination</h1>
+        <h1>Edit pickup Location</h1>
         <form onSubmit={handleSubmit}>
           <label htmlFor="location">User Location</label>
           <input
