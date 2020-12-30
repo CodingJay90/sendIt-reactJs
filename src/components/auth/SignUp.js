@@ -39,8 +39,11 @@ const SignUp = () => {
         console.log(data);
         if (data.success) {
           localStorage.setItem("currentUserId", data.userId);
+          localStorage.setItem("role", "member");
           localStorage.setItem("token", data.token);
-          history.push("/userDashboard");
+          data.role === "member"
+            ? history.push("/userDashboard")
+            : history.push("/adminDashboard");
           window.location.reload();
         } else {
           data.errors.map((err) => {
