@@ -41,9 +41,6 @@ const AdminDashboard = () => {
       <div className="container">
         <div className="hero">
           <h1>Dashboard</h1>
-          <Link to="/createParcel" className="btn">
-            Create Order
-          </Link>
         </div>
 
         <div className="details">
