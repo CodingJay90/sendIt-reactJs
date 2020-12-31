@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./SignUp.css";
@@ -98,6 +98,9 @@ const SignUp = () => {
               onChange={onChange}
             />
             <button>Submit</button>
+            <p>
+              Already had an account ? <Link to="/login">Log in</Link>
+            </p>
           </form>
         </div>
       </div>
