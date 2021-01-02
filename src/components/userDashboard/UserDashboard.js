@@ -10,6 +10,7 @@ const UserDashboard = () => {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("currentUserId");
   const [item, setItem] = useState([]);
+  const [loading, setLoading] = useState(true);
   const history = useHistory();
 
   useEffect(() => {
@@ -27,11 +28,12 @@ const UserDashboard = () => {
         .then((res) => res.json())
         .then((data) => {
           setItem(data);
+          setLoading(false);
           console.log(data);
         });
     }
   }, [history, token, userId]);
-  console.log(item);
+
   return (
     <>
       <div className="container">
@@ -46,14 +48,23 @@ const UserDashboard = () => {
           <div></div>
         </div>
         <h2>Orders</h2>
-        <div className="orders-layer">
-          <div className="orders">
-            {item.length > 0
-              ? item.map((i) => {
-                  return <Orders item={i} key={i.id} />;
-                })
-              : " You have no delivery order yet"}
-          </div>
+        <div>
+          {loading ? (
+            <div className="spinner">
+              <h4>Loading</h4>
+              <i className="fas fa-spinner App-logo-spin App-logo" />
+            </div>
+          ) : (
+            <div className="orders-layer">
+              <div className="orders">
+                {item.length > 0
+                  ? item.map((i) => {
+                      return <Orders item={i} key={i.id} />;
+                    })
+                  : " You have no delivery order yet"}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </>

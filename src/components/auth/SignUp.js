@@ -41,7 +41,7 @@ const SignUp = () => {
           localStorage.setItem("currentUserId", data.userId);
           localStorage.setItem("role", "member");
           localStorage.setItem("token", data.token);
-          data.role === "member"
+          data.role !== "member"
             ? history.push("/userDashboard")
             : history.push("/adminDashboard");
           window.location.reload();
